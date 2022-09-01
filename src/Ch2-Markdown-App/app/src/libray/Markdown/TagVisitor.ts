@@ -13,43 +13,43 @@ export interface IVisitable {
 }
 
 abstract class VisitorBase implements IVisitor {
+  private readonly tagToHtml: TagTypeToHtml = new TagTypeToHtml()
   constructor(
     private readonly tagType: TagType,
-    private readonly tagToHtlm: TagTypeToHtml
   ) {}
 
   visit(token: ParseElement, markdownDocument: IMarkdownDocument): void {
     markdownDocument.add(
-      this.tagToHtlm.OpeningTag(this.tagType),
+      this.tagToHtml.OpeningTag(this.tagType),
       token.currentLine,
-      this.tagToHtlm.ClosingTag(this.tagType)
+      this.tagToHtml.ClosingTag(this.tagType)
     );
   }
 }
 
 export class Header1Visitor extends VisitorBase {
   constructor() {
-    super(TagType.Header1, new TagTypeToHtml());
+    super(TagType.Header1);
   }
 }
 export class Header2Visitor extends VisitorBase {
   constructor() {
-    super(TagType.Header2, new TagTypeToHtml());
+    super(TagType.Header2);
   }
 }
 export class Header3Visitor extends VisitorBase {
   constructor() {
-    super(TagType.Header3, new TagTypeToHtml());
+    super(TagType.Header3);
   }
 }
 export class ParagraphVisitor extends VisitorBase {
   constructor() {
-    super(TagType.Paragraph, new TagTypeToHtml());
+    super(TagType.Paragraph);
   }
 }
 export class HorizentalLineVisitor extends VisitorBase {
   constructor() {
-    super(TagType.HorizontalLine, new TagTypeToHtml());
+    super(TagType.HorizontalLine);
   }
 }
 

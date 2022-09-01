@@ -16,7 +16,7 @@ export default class HtmlHandler {
     if (markdown.value) {
       output.innerHTML = this.markdown.toHtml(markdown.value).getDocuments();
     } else {
-      output.innerHTML = "<p style='color: grey'>input markdown</p>";
+      output.innerHTML = "<p></p>";
     }
   }
 }

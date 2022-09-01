@@ -10,6 +10,7 @@ const Page = () => {
       <main>
         <MDWrite />
         <MDView />
+        <span className='divider' ></span>
       </main>
     </div>
   )

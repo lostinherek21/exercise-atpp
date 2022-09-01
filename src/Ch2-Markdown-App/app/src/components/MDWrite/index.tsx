@@ -4,7 +4,7 @@ import "./style.scss"
 
 const MDWrite = () => {
   return (
-    <textarea id='markdown-write'>
+    <textarea placeholder='Input markdown' id='markdown-write'>
 
     </textarea>
   )
