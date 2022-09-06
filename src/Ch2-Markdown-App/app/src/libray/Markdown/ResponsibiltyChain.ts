@@ -19,11 +19,8 @@ export abstract class Handler<T> {
   }
 
   public handleRequest(request: T): void {
-    if (!this.canHandle(request)) {
-      if (this.next) {
-        this.next.handleRequest(request);
-      }
-      return;
+    if (!this.canHandle(request) && this.next) {
+      this.next.handleRequest(request);
     }
   }
 }
