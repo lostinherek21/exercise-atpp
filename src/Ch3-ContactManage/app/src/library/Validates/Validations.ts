@@ -20,9 +20,9 @@ export class AddressValidation implements PersonValidation {
       errors.push("town must be greater than 5 characters");
     }
 
-    if (!this.regExpValidator.isValid(personDetail.PostCode)) {
-      errors.push("invalid postcode/zip code");
-    }
+    // if (!this.regExpValidator.isValid(personDetail.PostCode)) {
+    //   errors.push("invalid postcode/zip code");
+    // }
   }
 }
 
@@ -46,7 +46,7 @@ export class PhoneNumberValidation implements PersonValidation {
   private readonly minLenValidator = new MinLengthValidator(1);
 
   Validate(personDetail: IPersonDetail, errors: string[]): void {
-    if (this.minLenValidator.isValid(personDetail.PhoneNumber)) {
+    if (!this.minLenValidator.isValid(personDetail.PhoneNumber)) {
       errors.push("phone number is empty");
     }
     // else if (!this.regExpValidator.isValid(personDetail.PhoneNumber)) {

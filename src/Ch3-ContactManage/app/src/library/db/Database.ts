@@ -88,7 +88,6 @@ export default class DataBase<T extends IRecordState> {
             }
             cursor.continue();
           } else {
-            console.log(items)
             resolve(items);
           }
         };

@@ -33,7 +33,6 @@ const FormValidation: FunctionComponent<IFormValidation> = ({
     validations.forEach((validation) =>
       validation.Validate(CurrentState, localErrors)
     );
-
     setErrors(localErrors);
     CanSave(localErrors.length === 0);
   }, [CurrentState]);
