@@ -1,0 +1,22 @@
+.person-detail {
+  margin-right: 20px;
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .muilt-input {
+    gap: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    * {
+      flex-grow: 1;
+    }
+
+  }
+
+
+}
