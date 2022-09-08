@@ -1,0 +1,7 @@
+<div fxLayout="row wrap" fxFlex.gt-xs="column" fxLayoutGap="1%" class="page-body-container">
+  <mat-card class="picture-card-layout" *ngFor="let pic of Pictures">
+    <mat-card-title> {{pic.Name}} </mat-card-title>
+    <img mat-card-image [src]="pic.Image" />
+    <p>{{pic.Description}}</p>
+  </mat-card>
+</div>

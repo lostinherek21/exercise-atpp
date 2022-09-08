@@ -11,6 +11,8 @@ import { PersonRecordState } from "../Types/PersonRecordState";
 import PersonDetailTableBuilder from "./../library/db/PersonDetailTableBuilder";
 import FormValidation from "../components/ValidateForm";
 
+let cnt = 0
+
 const Person = () => {
   //current person state
   const {
@@ -35,16 +37,16 @@ const Person = () => {
   }, []);
 
   const onClearClick = useCallback(() => {
+
     setDefaultState();
   }, []);
 
   //save form
   const [canSave, setCanSave] = useState(false);
 
-  function canSaveCallback(canSave: boolean) {
-    console.log(canSave);
-    setCanSave(canSave);
-  }
+  const canSaveCallback = useCallback((canSave:boolean) => {
+    setCanSave(canSave)
+  },[])
 
   const onSaveClick = useCallback(() => {
     if (canSave) {

@@ -1,0 +1,21 @@
+<div>
+  <mat-sidenav-container class="sidenav-container" >
+    <mat-sidenav #drawer class="sidenav" [opened]="false" fixedInViewport="true">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item (click)="ImportImage()">Import Image</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+      <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Advanced TypeScript</span>
+    </mat-toolbar>
+    <atp-page-body></atp-page-body>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<router-outlet></router-outlet>
